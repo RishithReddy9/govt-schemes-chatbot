@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: govt-chatbot-backend
+    runtime: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn app:app"
+    envVars:
+      - key: GEMINI_API_KEY
+        value: AIzaSyAnGkKFDtlB5vHZ8CsPkDO5IUI4-1QzhnQ
+      - key: SCHEMES_FILE
+        value: data/schemes.json
